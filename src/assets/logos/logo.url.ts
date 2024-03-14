@@ -1,0 +1,1 @@
+export const logoUrl = 'assets/logos/cafee_X-logos_black-crop.png';

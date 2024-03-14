@@ -1,0 +1,30 @@
+<ion-content>
+    <div class="logo">
+        <img [src]="logoUrl">
+    </div>
+    <div class="login">
+        LOGIN
+    </div>
+    <div class="fields">
+        <div class="field d-flex align-items-center">
+            <ion-icon class="start-icon" name="person" aria-hidden="true"></ion-icon>
+            <ion-input [formControl]="form.controls.username" placeholder="Username"></ion-input>
+            <ion-icon class="end-icon" name="close-circle" aria-hidden="true"></ion-icon>
+        </div>
+        <div style="margin-top: 52px;" class="field d-flex align-items-center">
+            <ion-icon class="start-icon" name="lock-closed" aria-hidden="true"></ion-icon>
+            <ion-input [formControl]="form.controls.password" placeholder="Password"></ion-input>
+            <ion-icon class="end-icon" name="eye" aria-hidden="true"></ion-icon>
+        </div>
+
+        <ion-button (click)="login()" class="d-flex" shape="round">Sign In</ion-button>
+
+        <div class="sprtr d-flex align-items-center content-space-between">
+            <div class="left"></div>
+            <div class="txt">OR</div>
+            <div class="right"></div>
+        </div>
+
+        <div class="sgn-up text-center">Don't have an account?   <a routerLink="/sign-up">Register</a></div>
+    </div>
+</ion-content>

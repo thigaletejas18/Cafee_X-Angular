@@ -1,0 +1,94 @@
+
+<ion-content>
+    
+        <div #swiperEl class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                    <ng-form [formGroup]="userForm">
+                    <div class="text-left que">
+                        Tell About Yourself
+                    </div>
+
+                    
+                    <div class="fields">
+
+                        <ion-input formControlName="firstName" label="First Name*" label-placement="floating"
+                            fill="outline" placeholder="Enter first name"></ion-input>
+
+                        <ion-input formControlName="lastName" style="margin-top: 40px;" label="Last Name*"
+                            label-placement="floating" fill="outline" placeholder="Enter last name"></ion-input>
+
+                        <ion-input formControlName="email" style="margin-top: 40px;" label="Email Id*"
+                            label-placement="floating" fill="outline" placeholder="Enter Email Id"></ion-input>
+
+                        <ion-input formControlName="mobileNumber" type="number" style="margin-top: 40px;" label="Mobile No*"
+                            label-placement="floating" fill="outline" placeholder="Enter Mobile No."></ion-input>
+
+                        <ion-textarea formControlName="address" style="margin-top: 40px;" label="Address"
+                            label-placement="floating" fill="outline" placeholder="Enter Address"></ion-textarea>
+
+                    </div>
+                    </ng-form>
+                </div>
+
+                <div class="swiper-slide">
+                    <ng-form [formGroup]="tenantForm">
+                    <div class="text-left que">
+                        Tell About Your Business
+                    </div>
+
+                    
+                    <div class="fields">
+
+                        <ion-input formControlName="name" label="Name*" label-placement="floating"
+                            fill="outline" placeholder="Enter name"></ion-input>    
+
+                        <ion-textarea formControlName="address" style="margin-top: 40px;" label="Address*"
+                            label-placement="floating" fill="outline" placeholder="Enter Address"></ion-textarea>
+
+                        <ion-input style="margin-top: 40px;" formControlName="email" label="Email Id*" label-placement="floating"
+                            fill="outline" placeholder="Enter Email Id"></ion-input>
+
+                        <ion-input style="margin-top: 40px;" formControlName="contactNumber" label="Contact Number*" label-placement="floating"
+                            fill="outline" placeholder="Enter Contact Number"></ion-input>
+
+                    </div>
+                    </ng-form>
+                </div>
+
+                <div class="swiper-slide">
+                    <ng-form [formGroup]="passwordForm">
+                    <div class="text-left que">
+                        Set your Password
+                    </div>
+
+                    
+                    <div class="fields"> 
+                        
+                        <ion-input #passwordInput class="password" formControlName="password" type="password" label="Password*" label-placement="floating"
+                            fill="outline" placeholder="Enter Password">
+                            <ion-button (click)="showPassword(passwordInput, showIcon)" fill="clear">
+                                <ion-icon #showIcon name="eye" aria-hidden="true"></ion-icon>
+                            </ion-button>
+                        </ion-input>
+
+                        <ion-input style="margin-top: 40px;" formControlName="confirmPassword" type="password" label="Confirm Password*" label-placement="floating"
+                            fill="outline" placeholder="Confirm Password"></ion-input>
+
+                    </div>
+                    </ng-form>
+                </div>
+
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+</ion-content>
+<ion-footer class="d-flex" [ngClass]="swiperRef.activeIndex !== 0 ? 'content-space-between' : 'content-flex-end'">
+    <ion-button *ngIf="swiperRef.activeIndex !== 0" (click)="swiperRef.slidePrev();" fill="clear">
+        <ion-icon name="chevron-back"></ion-icon>&nbsp;Previous
+    </ion-button>
+    <ion-button [disabled]="isNextDisabled(swiperRef.activeIndex)" (click)="nextStep(swiperRef.activeIndex)" fill="clear">
+        {{swiperRef.activeIndex === 2 ? 'Proceed' : 'Next'}}&nbsp;<ion-icon name="chevron-forward"></ion-icon>
+    </ion-button>
+</ion-footer>

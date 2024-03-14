@@ -1,0 +1,33 @@
+ion-content{
+    --background: var(--ion-theme-color)!important;
+    .logo{
+       padding: 10% 25% 0 25%;
+    }
+    .login{
+        padding: 50px;
+        text-align: center;
+        font-size: 3em;
+        color: white;
+        letter-spacing: 2px;
+    }
+    .fields{
+        padding: 50px;
+        .field{
+            border: 3px solid white;
+            border-radius: 8px;
+            color: white;
+            .start-icon{
+                padding: 20px 20px 20px 26px;
+                font-size: 2.5em;
+            }
+            ion-input{
+                margin-left: 5px;
+                font-size: 23px;
+            }
+            .end-icon{
+                padding: 20px 26px 20px 20px;
+                font-size: 2.5em;
+            }
+        }
+    }
+}

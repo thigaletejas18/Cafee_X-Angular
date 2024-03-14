@@ -1,0 +1,81 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+@import "swiper/css/bundle";
+
+.d-flex{
+    display: flex;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.text-left{
+    text-align: left;
+}
+
+.text-right{
+    text-align: right;
+}
+
+
+.align-items-center{
+    align-items: center;
+}
+
+.content-center{
+    justify-content: center;
+}
+
+.content-flex-start{
+    justify-content: flex-start;
+}
+
+.content-flex-end{
+    justify-content: flex-end;
+}
+
+.content-space-between{
+    justify-content: space-between;
+}
+
+.content-space-evenly{
+    justify-content: space-evenly;
+}
+
+
+ion-input{
+   --highlight-color-focused: none!important;
+}
+
+ion-loading{
+    --background: white;
+    --min-width: 280px;
+    --min-height: 90px;
+    font-size: 20px;
+}
