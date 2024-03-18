@@ -1,12 +1,19 @@
-import { NgModule } from '@angular/core';
-import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { NgModule, inject } from '@angular/core';
+import { PreloadAllModules, Router, RouterModule, Routes } from '@angular/router';
 import { SignUpPageComponent } from './page/sign-up/sign-up.page';
 import { LoginPageComponent } from './page/login/login.page';
+import { AuthService } from './service/auth.service';
 
 const routes: Routes = [
   {
-    path: 'tabs',
-    loadChildren: () => import('./page/tabs/tabs.module').then(m => m.TabsPageModule)
+    path: 'app',
+    loadChildren: () => import('./page/tabs/tabs.module').then(m => m.TabsPageModule),
+    canLoad: [()=>{ 
+      const authService = inject(AuthService);
+      const router = inject(Router);
+      if(!authService.getIsAuthenticated()){ router.navigate(['login']) }
+      return authService.getIsAuthenticated();
+    }],
   },
   {
     path: 'login',
@@ -21,10 +28,6 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full'
   },
-  {
-    path: 'app',
-    loadChildren: () => import('./page/tabs/tabs.module').then(m=>m.TabsPageModule)
-  }
 ];
 @NgModule({
   imports: [

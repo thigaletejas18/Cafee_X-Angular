@@ -6,11 +6,12 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { LoginPageComponent } from './page/login/login.page';
 import { SignUpPageComponent } from './page/sign-up/sign-up.page';
 import { SharedModule } from './shared/shared.module';
 import { StoreModule } from '@ngrx/store';
+import { AuthInterceptor } from './interceptors/auth.interceptors';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +23,8 @@ import { StoreModule } from '@ngrx/store';
     HttpClientJsonpModule,
     StoreModule.forRoot({}, {}),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
