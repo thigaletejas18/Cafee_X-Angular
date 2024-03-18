@@ -9,6 +9,8 @@ import { SERVER_API_URL } from 'src/environments/server-api-url';
 })
 export class TabsPage {
 
-  constructor(private _http: HttpClient) {}
+  constructor(private _http: HttpClient) {
+    
+  }
 
 }
