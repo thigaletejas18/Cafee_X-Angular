@@ -24,6 +24,7 @@ export class LoginPageComponent {
     }
 
     ionViewWillEnter() {
+        console.log('main');
         
         this.test.pipe()
         .subscribe({
