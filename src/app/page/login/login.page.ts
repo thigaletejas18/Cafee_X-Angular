@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { BehaviorSubject, Observable, debounce, debounceTime, distinctUntilChanged, of, switchMap, tap, timeInterval, timeout } from "rxjs";
+import { BehaviorSubject, Observable, debounce, debounceTime, distinctUntilChanged, from, of, switchMap, tap, timeInterval, timeout } from "rxjs";
 import { AuthService } from "src/app/service/auth.service";
 import { LoginService } from "src/app/service/login.service";
 import { logoUrl } from "src/assets/logos/logo.url";
@@ -24,8 +24,8 @@ export class LoginPageComponent {
     }
 
     ionViewWillEnter() {
-        
-        this.test.pipe()
+        const t = of(12,'jds');
+        this.test.pipe( )
         .subscribe({
             next: (res: any)=>{
             console.log('log: '+res);
