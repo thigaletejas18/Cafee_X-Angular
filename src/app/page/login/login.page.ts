@@ -44,6 +44,7 @@ export class LoginPageComponent {
     login() {
         console.log('next');
          this.test.next('hbj');
+         console.log('test');
         
         // const value = this.form.value;
         // if (value.username && value.password) {
