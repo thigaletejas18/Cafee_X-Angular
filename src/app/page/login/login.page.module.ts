@@ -6,6 +6,7 @@ import { ExploreContainerComponentModule } from "src/app/explore-container/explo
 import { SharedModule } from "src/app/shared/shared.module";
 import { LoginPageComponent } from "./login.page";
 import { RouterModule, Routes } from "@angular/router";
+import { TestDirective } from "src/app/test.directive";
 
 const routes : Routes =[
     {
@@ -19,6 +20,6 @@ const routes : Routes =[
       SharedModule,
       RouterModule.forChild(routes)
     ],
-    declarations: [LoginPageComponent]
+    declarations: [LoginPageComponent, TestDirective]
 })
 export class LoginPageModule{}

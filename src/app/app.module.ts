@@ -12,9 +12,11 @@ import { SignUpPageComponent } from './page/sign-up/sign-up.page';
 import { SharedModule } from './shared/shared.module';
 import { StoreModule } from '@ngrx/store';
 import { AuthInterceptor } from './interceptors/auth.interceptors';
+import { TestDirective } from './test.directive';
+import { TestPipe } from './test.pipe';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TestPipe],
   imports: [
     BrowserModule, 
     IonicModule.forRoot(), 

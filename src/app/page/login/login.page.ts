@@ -19,6 +19,9 @@ export class LoginPageComponent {
         password: new FormControl<string>('', [Validators.required])
     });
     test: BehaviorSubject<string> = new BehaviorSubject('');
+
+    loginForm: FormGroup<{id: FormControl<string | null>, name: FormControl<string | null>}> = new FormGroup({id: new FormControl(''), name: new FormControl('') });
+
     constructor(private activatedRote: ActivatedRoute,private loginService: LoginService, private _fb: FormBuilder, private _authService: AuthService, private _router: Router) {
 
     }
@@ -26,6 +29,9 @@ export class LoginPageComponent {
     ionViewWillEnter() {
         const t = of(12,'jds');
         this.test.pipe( )
+        console.log('main');
+        
+        this.test.pipe()
         .subscribe({
             next: (res: any)=>{
             console.log('log: '+res);
@@ -33,6 +39,8 @@ export class LoginPageComponent {
         error: ()=>{},
         complete: ()=>{console.log('complete')}
     })
+    
+    
         
     }
 
@@ -57,7 +65,5 @@ export class LoginPageComponent {
         //     });
         // }
     }
-
-
     
 }

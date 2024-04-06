@@ -8,12 +8,12 @@ const routes: Routes = [
   {
     path: 'app',
     loadChildren: () => import('./page/tabs/tabs.module').then(m => m.TabsPageModule),
-    canLoad: [()=>{ 
-      const authService = inject(AuthService);
-      const router = inject(Router);
-      if(!authService.getIsAuthenticated()){ router.navigate(['login']) }
-      return authService.getIsAuthenticated();
-    }],
+    // canLoad: [()=>{ 
+    //   const authService = inject(AuthService);
+    //   const router = inject(Router);
+    //   if(!authService.getIsAuthenticated()){ router.navigate(['login']) }
+    //   return authService.getIsAuthenticated();
+    // }],
   },
   {
     path: 'login',
