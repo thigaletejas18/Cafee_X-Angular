@@ -20,7 +20,7 @@ export class AuthService {
 
 
     login(username: string, password: string, rememberMe: boolean): Observable<boolean> {
-        return this.http.post<any>(`${SERVER_API_URL}user/authenticate`, { username: username, password: password }, { observe: 'response' })
+        return this.http.post<any>(`${SERVER_API_URL}/user/authenticate`, { username: username, password: password }, { observe: 'response' })
             .pipe(map(res => {
                 const response = res.body;
                 if (response.jwtToken) {
@@ -53,5 +53,4 @@ export class AuthService {
         localStorage.removeItem(credentialsKey);
         this._router.navigate(['login']);
     }
-
 }

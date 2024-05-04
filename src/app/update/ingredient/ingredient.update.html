@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-toolbar>
+        <div class="text-center">
+            <span style="float: left;">
+                <ion-back-button style="font-size: 20px;" fill="clear">
+                    <ion-icon style="color: white;" name="arrow-back"></ion-icon>
+                </ion-back-button>
+            </span>
+        </div>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <form [formGroup]="editForm">
+        <div class="add-img-cont">
+            <div class="add-img">
+                <ion-icon class="add-img-icon" name="image-outline"></ion-icon>
+                <ion-button fill="clear" class="add-img-btn clear-btn">
+                    <ion-icon name="add-circle"></ion-icon>
+                </ion-button>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 30px;" (click)="isDetailsExpanded = !isDetailsExpanded"
+            class="ing-section d-flex content-space-between">
+            <div><ion-icon name="file-tray-full-outline"></ion-icon>&nbsp;&nbsp;<span>Details</span></div>
+            <div><ion-icon [name]="isDetailsExpanded ? 'chevron-down-outline' : 'chevron-up-outline'"></ion-icon></div>
+        </div>
+
+        <div [hidden]="!isDetailsExpanded" class="que-container">
+            <ion-input class="ing-input form-input" formControlName="name" fill="outline" name="name" placeholder="Enter Ingredient Name*"
+                label="Ingredient Name*" labelPlacement="floating"></ion-input>
+            <ion-textarea class="ing-input form-textarea" formControlName="description" style="margin-top: 30px;" fill="outline" name="description"
+                placeholder="Enter Description" label="Description" labelPlacement="floating"></ion-textarea>
+            <ion-input class="ing-input form-input" formControlName="cost" style="margin-top: 30px; margin-bottom: 30px;" type="number" fill="outline" name="cost"
+                placeholder="Enter Cost/Unit*" label="Cost/Unit*" labelPlacement="floating"></ion-input>
+        </div>
+
+        <div style="margin-bottom: 30px;" (click)="isInventoryExpanded = !isInventoryExpanded"
+            class="ing-section d-flex content-space-between">
+            <div><ion-icon name="file-tray-full-outline"></ion-icon>&nbsp;&nbsp;<span>Inventory</span></div>
+            <div><ion-icon [name]="isInventoryExpanded ? 'chevron-down-outline' : 'chevron-up-outline'"></ion-icon>
+            </div>
+        </div>
+
+        <div [hidden]="!isInventoryExpanded" class="que-container">
+            <div class="d-flex">
+                <ion-input class="ing-input form-input" formControlName="quantity" style="width: 70%;" fill="outline" type="number" name="quantity"
+                    placeholder="Enter Current Quantity*" label="Current Quantity*"
+                    labelPlacement="floating"></ion-input>
+                <ion-input class="ing-input form-input" formControlName="unit" style="width: 30%;" fill="outline" name="unit" placeholder="Unit*"
+                    label="Unit*" labelPlacement="floating"></ion-input>
+            </div>
+            <ion-input class="ing-input form-input" formControlName="minQuantity" style="margin-top: 30px;" fill="outline" type="number"
+                name="minQuantity" placeholder="Enter Min Quantity*" label="Minimum Quantity*"
+                labelPlacement="floating"></ion-input>
+        </div>
+        <div class="text-center"><ion-button (click)="save();" shape="round" [disabled]="!editForm.dirty" expand="full"
+                class="form-save-btn">Save</ion-button></div>
+    </form>
+</ion-content>
+<ion-footer></ion-footer>
+<div *ngIf="isLoading" class="loading-overlay"><ion-spinner></ion-spinner></div>

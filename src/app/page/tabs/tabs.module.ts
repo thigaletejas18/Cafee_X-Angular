@@ -13,12 +13,12 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'dashboard',
+        loadChildren: () => import('../dashboard/dashboard-page.module').then(m => m.DashboardPageModule)
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'ingredient',
+        loadChildren: () => import('../ingredient/ingredient-page.module').then(m => m.IngredientPageModule)
       },
       {
         path: 'tab3',
@@ -26,7 +26,7 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: 'tab1',
+        redirectTo: 'dashboard',
         pathMatch: 'full'
       }
     ]

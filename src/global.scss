@@ -79,3 +79,115 @@ ion-loading{
     --min-height: 90px;
     font-size: 20px;
 }
+
+
+ion-input{
+   --highlight-color-focused: none!important;
+}
+
+ion-loading{
+    --background: white;
+    --min-width: 280px;
+    --min-height: 90px;
+    font-size: 20px;
+}
+
+div.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999; /* Make sure it's above other elements on the page */
+}
+
+.hr{
+    border-top: solid 1px rgba(0, 0, 0, 0.5);
+    width: 100%;
+}
+
+ion-header{
+   -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+
+ion-toolbar{
+   --background: var(--ion-theme-color)!important;
+}
+
+ion-content{
+    --background: #ccc;
+    border-radius: 22px 22px 0 0!important;
+    overflow: hidden!important;
+    --padding-start: 20px!important;
+    --padding-end: 20px!important;
+    --padding-top: 20px!important;
+    --padding-bottom: 20px!important;
+}
+
+app-tabs{
+    background: #ccc!important;
+}
+
+.ion-page{
+    background: var(--ion-theme-color);
+}
+
+.clear-btn{
+    --padding-top: 0;
+    --padding-bottom: 0;
+    --padding-start: 0;
+    --padding-end: 0;
+    margin: 0;
+    min-height: 0;
+}
+.form-input{
+    --border-radius: 8px!important;
+    --padding-start: 20px!important;
+    --padding-end: 20px!important;
+    font-size: 23px;
+    min-height: 81px!important;
+    --border-width: 3px!important;
+}
+
+.form-textarea{
+    min-height: 110px!important; 
+    font-size: 23px;
+    --padding-start: 20px!important;
+    --padding-end: 20px!important;
+    --border-radius: 8px!important;
+    --padding-top: 8px!important;
+    --border-width: 3px!important;
+} 
+
+.form-save-btn{
+    margin: 40px 30px 0px 30px;
+    --padding-top: 26px;
+    --padding-bottom: 26px;
+    --color: white;
+    --background: #ec2f5b;
+    font-size: 18px;
+}
+ion-item{
+    --background: white;
+    --border-radius: 22px;
+}
+
+.avatar{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+ion-tab-bar{
+    background: '#181818';
+    border-radius: 22px 22px 0 0;
+    ion-tab{
+        background: 'inherit'
+    }
+}
+

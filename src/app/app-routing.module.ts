@@ -6,7 +6,7 @@ import { AuthService } from './service/auth.service';
 
 const routes: Routes = [
   {
-    path: 'app',
+    path: 'tabs',
     loadChildren: () => import('./page/tabs/tabs.module').then(m => m.TabsPageModule),
     // canLoad: [()=>{ 
     //   const authService = inject(AuthService);

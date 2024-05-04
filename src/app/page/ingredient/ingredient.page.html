@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <div style="margin: 20px" class="card d-flex content-space-between">
+      <ion-input placeholder="Search here..." style="width: 80%" class="search"
+        [formControl]="searchControl"></ion-input>
+      <div class="srch-icon" style="width: 20%"><ion-icon name="search-outline"></ion-icon></div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div *ngIf="ingredients.length>0; else noData">
+    <ion-item *ngFor="let data of ingredients" [routerLink]="['/ingredient/', data.id, '/edit']" style="margin: 10px 0"
+      lines="none" class="items">
+      <div class="d-flex">
+        <div style="height: 60px; width: 60px; color: #ccc">
+          <ng-container *ngIf="data.image; else noImage">
+            <img class="avatar" src="https://picsum.photos/200" />
+          </ng-container>
+          <ng-template #noImage>
+            <ion-icon color="black" style="height: 90%; width: 90%" name="image-outline"></ion-icon>
+          </ng-template>
+        </div>
+        <div style="margin-left: 45px">
+          <div class="ing-title">
+            {{ data.name }}
+          </div>
+          <div class="qty-badge">
+            <ion-icon name="file-tray-full"></ion-icon> &nbsp;&nbsp;Qty: {{ data.quantity }} {{ data.unit }}
+          </div>
+        </div>
+      </div>
+    </ion-item>
+  </div>
+
+  <ion-fab style="margin: 0 10px 39px 0;" vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="new()">
+      <ion-icon name="add-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<ion-footer>
+</ion-footer>
+<ng-template #noData>
+  <app-empty-state [title]="'No Ingredients Available'" [subTitle]="'Please add items to start'"></app-empty-state>
+</ng-template>

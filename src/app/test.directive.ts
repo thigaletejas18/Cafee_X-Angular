@@ -13,7 +13,7 @@ export class TestDirective {
       this._viewContainerRef.createEmbeddedView(this._templateRef);
     }
     else{
-      this._viewContainerRef.clear()
+      this._viewContainerRef.clear();
     }
   }
 

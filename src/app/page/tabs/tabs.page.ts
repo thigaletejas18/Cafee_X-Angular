@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { SERVER_API_URL } from 'src/environments/server-api-url';
 
 @Component({
   selector: 'app-tabs',

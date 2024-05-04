@@ -1,0 +1,54 @@
+.dp-header{
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+
+
+
+.dp-toolbar{
+    --background: var(--ion-theme-color);
+    display: flex;
+    justify-content: center;
+}
+
+.logo-cont{
+    display: flex;
+    letter-spacing: 2px;
+    justify-content: center;
+    color: #121212;
+    font-weight: 500;
+    /* margin: 20px 190px 30px 190px;    */
+}
+
+
+.page-content{
+    --padding-start: 20px;
+    --padding-end: 20px;
+}
+
+.dp-page{
+    background: var(--ion-theme-color)!important;
+}
+
+.dp-main-card{
+    background: whitesmoke;
+    border-radius: 22px;
+    height: 180px;
+    margin-top: 30px;
+}
+
+.dp-sub-card{
+    background: whitesmoke;
+    border-radius: 22px;
+    height: 180px;
+    width: calc(100%/3 - 10px);
+    /*margin: 30px 20px;*/
+}
+
+.dp-scroll-card{
+    background: whitesmoke;
+    border-radius: 22px;
+    height: 490px;
+    margin-top: 50px;
+    overflow-y: auto;
+}
